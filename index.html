@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wetsuit Thickness Calculator</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <meta name="description" content="Find a recommended wetsuit thickness based on the water temperature.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Wetsuit Thickness Calculator</a>
+  </header>
+
+  <div class="layout">
+    <main class="main">
+      <h1>Find the thickness for you</h1>
+      <p class="lead">Enter the water temperature and find your thickness</p>
+
+      <div class="calc">
+        <div class="field">
+          <label for="water-temp">Water temperature</label>
+          <div class="temperature-controls">
+            <input id="water-temp" name="water-temp" type="number" step="any" placeholder="Enter water temperature">
+            <select id="temperature-unit" name="temperature-unit" aria-label="Temperature unit">
+              <option value="celsius">℃</option>
+              <option value="fahrenheit">°F</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <section class="result" aria-live="polite">
+        <div class="big">
+          <span class="num" id="thickness"></span>
+          <span class="unit" id="thickness-unit"></span>
+        </div>
+      </section>
+
+      <section class="info">
+        <h2>How to use the calculator</h2>
+        <p>Enter the water temperature in the input box and select Celsius or Fahrenheit. The result appears straight away, showing the recommended wetsuit thickness for those conditions.</p>
+
+        <h2>How the value is calculated</h2>
+        <p>The calculator uses the water temperature you enter to recommend a wetsuit thickness based on typical surfing conditions. Warmer water generally requires a thinner wetsuit, while colder water needs thicker neoprene to keep you warm.</p>
+        <p>Recommendations are based on these general temperature ranges:</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Water temperature</th><th scope="col">Recommended wetsuit</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Above 24°C</td><td>Rash vest / 1mm</td></tr>
+              <tr><td>Above 20°C to 24°C</td><td>2mm</td></tr>
+              <tr><td>Above 15°C to 20°C</td><td>3/2mm</td></tr>
+              <tr><td>Above 11°C to 15°C</td><td>4/3mm</td></tr>
+              <tr><td>Above 8°C to 11°C</td><td>5/4mm</td></tr>
+              <tr><td>8°C and below</td><td>6/5mm</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>If you select Fahrenheit, the calculator converts the temperature before working out the recommendation. Exact boundary temperatures use the recommendation for the colder range.</p>
+        <p>These recommendations are a general guide rather than a guarantee of comfort. Wind, air temperature, session length and personal cold tolerance can all affect how warm you feel in the water.</p>
+
+        <h2>Worked examples</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th scope="col">Water temperature</th><th scope="col">Recommended wetsuit</th><th scope="col">Conditions</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>25°C</td><td>Rash vest / 1mm</td><td>Very warm</td></tr>
+              <tr><td>21°C</td><td>2mm</td><td>Warm</td></tr>
+              <tr><td>17°C</td><td>3/2mm</td><td>Mild</td></tr>
+              <tr><td>13°C</td><td>4/3mm</td><td>Cold</td></tr>
+              <tr><td>10°C</td><td>5/4mm</td><td>Very cold</td></tr>
+              <tr><td>6°C</td><td>6/5mm</td><td>Extremely cold</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h2>What people use it for</h2>
+        <ul>
+          <li>Choosing the right wetsuit before heading out for a surf.</li>
+          <li>Checking whether a 3/2mm, 4/3mm or 5/4mm wetsuit is suitable for current water temperatures.</li>
+          <li>Deciding whether to wear additional accessories such as neoprene boots, gloves or a hood.</li>
+          <li>Preparing for surfing trips and checking what wetsuit thickness to pack.</li>
+          <li>Comparing seasonal water temperatures to decide when to switch between summer and winter wetsuits.</li>
+        </ul>
+
+        <h2>Frequently asked questions</h2>
+
+        <h3>What wetsuit thickness do I need?</h3>
+        <p>It depends on the water temperature. As a general guide, a 3/2mm wetsuit suits water around 15–20°C, a 4/3mm suits around 11–15°C, and a 5/4mm is better for colder water around 8–11°C. Use the calculator above for a recommendation based on your temperature.</p>
+
+        <h3>What do the two numbers in a wetsuit thickness mean?</h3>
+        <p>The two numbers refer to the thickness of the neoprene in different parts of the wetsuit. For example, a 4/3mm wetsuit has 4mm of neoprene around the torso and 3mm around the arms and legs. The thicker material around the core helps retain body heat, while thinner material in the limbs allows greater flexibility.</p>
+
+        <h3>Should I wear boots, gloves and a hood?</h3>
+        <p>These accessories help keep your extremities warm in colder water. Boots are often useful below 15°C, while gloves and a hood are generally worth considering below 12°C. The exact temperatures depend on personal preference and conditions.</p>
+
+        <h3>Does air temperature affect which wetsuit I need?</h3>
+        <p>Yes. The calculator uses water temperature as its main guide, but air temperature and wind can also affect how quickly you lose heat, particularly when you're out of the water. You may need a warmer wetsuit if conditions are windy or particularly cold.</p>
+
+        <h3>Are the recommendations suitable for all surfers?</h3>
+        <p>The recommendations are general guidelines for surfing, not exact rules. Some people feel the cold more than others, and factors such as session length, activity level and wetsuit fit can make a difference. If you tend to get cold easily, consider choosing a thicker wetsuit.</p>
+
+        <h3>Can I use Fahrenheit instead of Celsius?</h3>
+        <p>Yes. Select Fahrenheit on the calculator to enter the water temperature in °F. The calculator converts the value automatically and provides the same wetsuit recommendation.</p>
+
+        <h3>Are the recommendations suitable for other watersports?</h3>
+        <p>They can be used as a general starting point for activities such as paddleboarding, kayaking and open-water swimming. However, different activities involve different levels of movement and heat loss, so the ideal wetsuit thickness may vary.</p>
+
+        <h3>Are the temperatures and recommendations exact?</h3>
+        <p>No. Wetsuit manufacturers can have slightly different recommendations, and comfort depends on several factors beyond water temperature. The calculator provides a practical starting point to help you choose a suitable wetsuit, rather than a guarantee that you'll stay warm.</p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <a href="/about.html">About</a>
+    <a href="/privacy.html">Privacy</a>
+    <a href="/contact.html">Contact</a>
+  </footer>
+
+  <script>
+    (function () {
+      var temperatureEl = document.getElementById('water-temp');
+      var unitEl = document.getElementById('temperature-unit');
+      var thicknessEl = document.getElementById('thickness');
+      var thicknessUnitEl = document.getElementById('thickness-unit');
+
+      function calculate() {
+        var temperature = temperatureEl.valueAsNumber;
+        if (!Number.isFinite(temperature)) {
+          thicknessEl.textContent = '';
+          thicknessUnitEl.textContent = '';
+          return;
+        }
+
+        var celsius = unitEl.value === 'fahrenheit'
+          ? (temperature - 32) * 5 / 9
+          : temperature;
+        celsius = Math.round(celsius * 1000000) / 1000000;
+
+        var thickness;
+        if (celsius > 24) thickness = '1';
+        else if (celsius > 20) thickness = '2';
+        else if (celsius > 15) thickness = '3/2';
+        else if (celsius > 11) thickness = '4/3';
+        else if (celsius > 8) thickness = '5/4';
+        else thickness = '6/5';
+
+        thicknessEl.textContent = thickness;
+        thicknessUnitEl.textContent = 'mm';
+      }
+
+      temperatureEl.addEventListener('input', calculate);
+      unitEl.addEventListener('change', calculate);
+    })();
+  </script>
+</body>
+</html>
